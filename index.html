@@ -33,25 +33,28 @@
             <li><button id="choice3"></button></li>
             <li><button id="choice4"></button></li>
         </ul>
+        <div id="answer"> </div>
     </div>
     <!--Final Score-->
     <div id=quizCompletePage>
         <h1>Quiz Complete!</h1>
+        <div id="finalScoreIs"></div>
         <form>
-            <label>Initials:</label>
+            <label id="initials">Initials:</label>
                 <input name="submittedInitials">
         </form>
-        <button>Submit</button>
+        <button id=initialButton>Submit</button>
     </div>
     <!--Buttons Back to Home-->
     <div id="highScoreButtons">
         <h2>Highscores</h2>
         <p id=highScoreList></p>
         <button id="goBack">Go Back</button>
-        <button id=""id="clearScores" value="reset-form">Clear Scores</button>
+        <button id="clearScores" value="reset-form">Clear Scores</button>
     </div>
 </main>
   
-  <script src="./script.js"></script>
+<script src="script.js" type="text/javascript"></script>
+
 </body>
 </html>
