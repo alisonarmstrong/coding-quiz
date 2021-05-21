@@ -8,12 +8,14 @@
   <title>Coding Quiz</title>
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
+<!--Header-->    
 <nav class="header">
-    <button class="showHighScores">High Scores</button>
+    <a type="button" id="score" onclick="showHighScores()">View High Scores</a>
     <a id="timer"></a>
 </nav>    
 
@@ -28,23 +30,25 @@
     <div id="quizQuestionsPage">
         <p id="question"></p>
         <ul class="answerButtons">
-            <li><button id="choice1"></button></li>
-            <li><button id="choice2"></button></li>
-            <li><button id="choice3"></button></li>
-            <li><button id="choice4"></button></li>
+            <li><button type="button" id="choice1"></button></li>
+            <li><button type="button" id="choice2"></button></li>
+            <li><button type="button" id="choice3"></button></li>
+            <li><button type="button" id="choice4"></button></li>
         </ul>
-        <div id="answer"> </div>
+        <div id="answerResponse"> </div>
     </div>
+
     <!--Final Score-->
-    <div id=quizCompletePage>
+    <div id=finalScorePage>
         <h1>Quiz Complete!</h1>
         <div id="finalScoreIs"></div>
         <form>
             <label id="initials">Initials:</label>
-                <input name="submittedInitials">
+                <input name="inputInitials">
         </form>
         <button id=initialButton>Submit</button>
     </div>
+
     <!--Buttons Back to Home-->
     <div id="highScoreButtons">
         <h2>Highscores</h2>
@@ -55,6 +59,16 @@
 </main>
   
 <script src="script.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
 </html>
