@@ -68,15 +68,20 @@ function codeQuizChallenge() {
   header.style.display = "block";
   quizQuestionsPage.style.display = "none";
   finalScorePage.style.display = "none";
+
+  var startScore = 0;
+  timer.textContent = "Time: " + startScore;
 }
 
-function resetVariables() {
+function resetVariables() {}
+
+function startQuiz() {  
   quizChallengePage.style.display = "none";
   quizQuestionsPage.style.display = "block";
 
   secondsLeft = 80;
 
-  var timerInterval =setInterval(function() {
+  var timerInterval = setInterval(function() {
     secondsLeft--;
     timer.textContent = "Time: " + secondsLeft;
     if (secondsLeft === 0 || quizQuestionsPage.length === questionIndex) {
@@ -84,4 +89,58 @@ function resetVariables() {
       showFinalScore();
     }
   }, 1000);
+}
+
+function showQuestions() {
+  var q = quizQuestions[questionIndex];
+
+  quizQuestionHeader.innerHTML = q.quizQuestionHeader;
+  choice1.innerHTML = q.one;
+  choice1.setAttribute("data-answer", q.one);
+  choice2.innerHTML = q.one;
+  choice2.setAttribute("data-answer", q.two);
+  choice3.innerHTML = q.one;
+  choice3.setAttribute("data-answer", q.three);
+  choice4.innerHTML = q.one;
+  choice4.setAttribute("data-answer", q.four);
+}
+
+showQuestions();
+choice1.addEventListener("click", function (event) {
+  checkAnswer(event);
+})
+choice2.addEventListener("click", function (event) {
+  checkAnswer(event);
+})
+choice3.addEventListener("click", function (event) {
+  checkAnswer(event);
+})
+choice4.addEventListener("click", function (event) {
+  checkAnswer(event);
+})
+
+function checkAnswer(event) {
+  event.preventDefault();
+
+  var answer = event.currentTarget.dataset.answer;
+  var correctAnswer = null;
+
+  if (quizQuestions[questionIndex].correct === answer) {
+    correctAnswer = answer;
+  }
+  if (answer === correctAnswer) {
+    answer.Response.textContent = "Correct";
+  } else {
+    answerResponse.textContent = "Incorrect";
+    secondsLeft -= 10
+    if (secondsLeft < 0) {
+      secondsLeft = 0;
+    }
+  }
+  if (quizQuestions.length === questionIndex+1){
+    showFinalScore();
+    return;
+  }
+  questionIndex++;
+  showQuestions();
 }
