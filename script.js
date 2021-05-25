@@ -176,3 +176,21 @@ function showHighScores() {
   var highScores = getInitials + ": " + secondsLeft;
   $("#highScoreList").append(highScores)
 }
+
+submitButton.addEventListener("click", function() {
+  startQuiz()
+})
+initialButton.addEventListener("click", function() {
+  showHighScores();
+})
+// clearHighScore.addEventListener("click", function() {
+//   localStorage.clear();
+// })
+goBack.addEventListener("click", function() {
+  $("#highScoreList").empty()
+  $("#initialInput").val("")
+  resetVariables()
+  codeQuizChallenge();
+})
+
+codeQuizChallenge();
