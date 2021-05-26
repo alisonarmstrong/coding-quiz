@@ -21,40 +21,43 @@
 
 <main class="container">
     <!--Start Page-->
-    <div id=quizHomePage>
-        <h1>Coding Quiz Challenge</h1>
+    <div id=quizChallengePage>
+        <h1 id="start">Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score and time by 10 seconds!</p>
-        <button id=startQuiz>Start Quiz</button>
+        <button id="submitButton" class="btn active" type="button">Start Quiz</button>
     </div>
     <!--Questions--> 
     <div id="quizQuestionsPage">
-        <p id="question"></p>
-        <ul class="answerButtons">
-            <li><button type="button" id="choice1"></button></li>
-            <li><button type="button" id="choice2"></button></li>
-            <li><button type="button" id="choice3"></button></li>
-            <li><button type="button" id="choice4"></button></li>
+        <p id="quizQuestionHeader"></p>
+        <ul>
+            <li><button type="button" class="btn questionButton" id="choice1"></button></li>
+            <li><button type="button" class="btn questionButton" id="choice2"></button></li>
+            <li><button type="button" class="btn questionButton" id="choice3"></button></li>
+            <li><button type="button" class="btn questionButton" id="choice4"></button></li>
         </ul>
         <div id="answerResponse"> </div>
     </div>
 
     <!--Final Score-->
     <div id=finalScorePage>
-        <h1>Quiz Complete!</h1>
+        <h1 id="done">Quiz Complete!</h1>
         <div id="finalScoreIs"></div>
-        <form>
-            <label id="initials">Initials:</label>
-                <input name="inputInitials">
+        <form class="row">
+            <div class="form-inline">
+                <label for="text" id="initials" class="col col-form-label input-group"></label>
+                <div> 
+                <input type="text" class="col form-control" id="initialInput">
+                <button id="initialButton" class="btn" type="button"></button></a>
+            </div>
         </form>
-        <button id=initialButton>Submit</button>
     </div>
 
     <!--Buttons Back to Home-->
     <div id="highScoreButtons">
-        <h2>Highscores</h2>
+        <h2 id="highScores">Highscores</h2>
         <p id=highScoreList></p>
-        <button id="goBack">Go Back</button>
-        <button id="clearScores" value="reset-form">Clear Scores</button>
+        <button id="goBack"class ="btn" type="button">Go Back</button>
+        <button id="clearHighScore" class ="btn" value="reset-form" type="button">Clear Scores</button>
     </div>
 </main>
   
